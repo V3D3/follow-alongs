@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+        <title>JS Fetch API</title>
+    </head>
+    <body>
+        <script>
+            let srcfile = "../_blob/ZonAnn.Ts+dSST.csv";
+
+            async function getData()  {
+                const response = await fetch(srcfile);
+                const data = await response.text();
+
+                console.log(data);
+
+                const table = data.split(/\n/).slice(1);
+                table.forEach(row =>  {
+                    const fields = row.split(',');
+                    const year = fields[0];
+                    const temperature = fields[1];
+
+                    if(year)  {
+                        console.log(year, temperature);
+                    }
+                })
+            }
+
+            getData();
+        </script>
+    </body>
+</html>
