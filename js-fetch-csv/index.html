@@ -5,10 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie-edge" />
         <title>JS Fetch API</title>
+
+        <script src="../_src/chart.min.js"></script>
     </head>
     <body>
+        <canvas id="mychart" width="800" height="400"></canvas>
         <script>
             let srcfile = "../_blob/ZonAnn.Ts+dSST.csv";
+
+            const ctx = document.getElementById("mychart").getContext("2d");
+
+            function drawChart(xlabels, ytemps)  {
+                const myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: xlabels,
+                        datasets: [
+                            {
+                                label: "Global Average Temperature",
+                                data: ytemps,
+                                backgroundColor: ['rgba(255, 99, 132, 1)'],
+                                borderWidth: 1
+                            }
+                        ]
+                    }
+                });
+            }
 
             async function getData()  {
                 const response = await fetch(srcfile);
@@ -16,16 +38,22 @@
 
                 console.log(data);
 
+                let xlabels = [];
+                let ytemps  = [];
+
                 const table = data.split(/\n/).slice(1);
                 table.forEach(row =>  {
                     const fields = row.split(',');
                     const year = fields[0];
-                    const temperature = fields[1];
+                    const temperature = parseFloat(fields[1]) + 14;
 
                     if(year)  {
-                        console.log(year, temperature);
+                        xlabels.push(year);
+                        ytemps.push(temperature);
                     }
-                })
+                });
+
+                drawChart(xlabels, ytemps);
             }
 
             getData();
