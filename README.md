@@ -11,8 +11,10 @@ Sources needed: (in the `_src/` folder)<br>
 `p5.js` for `ball-bounce-box`<br>
 `p5.js` for `random-walker`<br>
 `p5.js` for `get-text`<br>
+`p5.js` for `get-text-file`<br>
 `chart.js` for `js-fetch-csv`
 
 Larger files needed: (in the `_blob/` folder)<br>
+`example.txt` for `get-text-file`
 `example.jpg` for `js-fetch`<br>
-`ZonAnn.Ts+dSST.csv` for `js-fetch-csv`
+`ZonAnn.Ts+dSST.csv` for `js-fetch-csv`<br>
