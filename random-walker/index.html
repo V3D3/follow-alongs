@@ -8,5 +8,19 @@
     <body>
         <script src="walker.js"></script>
         <script src="sketch.js"></script>
+
+        <script>
+            function fixMode()  {
+                resetSketch(true, +document.getElementById("fixsize").value);
+            }
+            function unfixMode()  {
+                resetSketch(false, +document.getElementById("unfixsize").value);
+            }
+        </script>
+
+        <input id="fixsize" type="number" value=1 min=1 />
+        <button onclick="fixMode()">Fix</button>
+        <input id="unfixsize" type="number" value=1 min=1 />
+        <button onclick="unfixMode()">Unfix</button>
     </body>
 </html>
