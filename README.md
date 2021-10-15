@@ -5,3 +5,6 @@ All the pages refer to `p5.js` using `../_src/p5.js`, so if serving please serve
 
 Currently following:<br>
 Daniel Shiffman's `The Coding Train`
+
+Larger files needed: (in the `_blob/` folder)<br>
+`example.jpg` for `js-fetch`

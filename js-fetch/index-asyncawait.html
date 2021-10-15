@@ -12,7 +12,7 @@
             console.log("Arming fetch");
 
             async function fetchImg()  {
-                const imgblob = await fetch("example.jpg");
+                const imgblob = await fetch("../_blob/example.jpg");
                 const img     = await imgblob.blob();
                 document.getElementById("myimg").src = URL.createObjectURL(img);
             }
