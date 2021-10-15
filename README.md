@@ -10,6 +10,7 @@ Daniel Shiffman's `The Coding Train`
 Sources needed: (in the `_src/` folder)<br>
 `p5.js` for `ball-bounce-box`<br>
 `p5.js` for `random-walker`<br>
+`p5.js` for `get-text`<br>
 `chart.js` for `js-fetch-csv`
 
 Larger files needed: (in the `_blob/` folder)<br>
