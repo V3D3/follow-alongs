@@ -13,6 +13,7 @@ Sources needed: (in the `_src/` folder)<br>
 `p5.js` for `get-text`<br>
 `p5.js` for `get-text-file`<br>
 `p5.js` for `lots-of-lines-to-mouse`<br>
+`p5.js` for `mouse-magnetized`<br>
 `chart.js` for `js-fetch-csv`
 
 Larger files needed: (in the `_blob/` folder)<br>
