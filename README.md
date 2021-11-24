@@ -14,7 +14,10 @@ Sources needed: (in the `_src/` folder)<br>
 `p5.js` for `get-text-file`<br>
 `p5.js` for `lots-of-lines-to-mouse`<br>
 `p5.js` for `mouse-magnetized`<br>
-`chart.js` for `js-fetch-csv`
+`p5.js` for `3d-knots`<br>
+`chart.js` for `js-fetch-csv`<br>
+`leaflet/leaflet.js` for `iss-location`<br>
+`leaflet/leaflet.css` for `iss-location`
 
 Larger files needed: (in the `_blob/` folder)<br>
 `example.txt` for `get-text-file`<br>

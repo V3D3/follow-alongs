@@ -4,9 +4,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie-edge" />
-        <title>JS Fetch API</title>
+        <title>Where's the ISS?</title>
+
+        <link rel="stylesheet" href="../_src/leaflet/leaflet.css" />
+        <script src="../_src/leaflet/leaflet.js"></script>
     </head>
     <body>
+        <div id="map" style="height: 400px;"></div>
         <p>
             The ISS is at:<br/>
             Latitude: <span id="lat"></span><br/>
@@ -14,6 +18,9 @@
         </p>
         <script>
             const ENDPOINT = "https://api.wheretheiss.at/v1/satellites/25544";
+            const COPYRIGHT = "&copy; <a href='https://www.openstreetmap.org/copyright'> OpenStreetMap contributors</a>";
+
+            let marker = null;
 
             async function getISS()  {
                 const response = await fetch(ENDPOINT);
@@ -23,6 +30,19 @@
 
                 document.getElementById("lat").textContent = latitude;
                 document.getElementById("lon").textContent = longitude;
+
+                let map = L.map("map").setView([latitude, longitude], 3);
+                const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+                const tiles = L.tileLayer(tileUrl, { COPYRIGHT });
+
+                if(marker)  {
+                    marker.setLatLng([latitude, longitude]);
+                    let map = L.map("map").setView([latitude, longitude], 3);
+                }  else  {
+                    marker = L.marker([0, 0]).addTo(map);
+                }
+
+                tiles.addTo(map);
             }
 
             getISS();
