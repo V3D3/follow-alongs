@@ -22,16 +22,22 @@
 
             let marker = null;
 
+            let first = true;
+
             async function getISS()  {
                 const response = await fetch(ENDPOINT);
                 const data = await response.json();
 
                 const {latitude, longitude} = data;
 
-                document.getElementById("lat").textContent = latitude;
-                document.getElementById("lon").textContent = longitude;
+                document.getElementById("lat").textContent = latitude.toFixed(2);
+                document.getElementById("lon").textContent = longitude.toFixed(2);
 
                 let map = L.map("map").setView([latitude, longitude], 3);
+                if(first)  {
+                    map.setView([latitude, longitude], 5);
+                    first = false;
+                }
                 const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
                 const tiles = L.tileLayer(tileUrl, { COPYRIGHT });
 
@@ -46,6 +52,8 @@
             }
 
             getISS();
+
+            setInterval(getISS, 2000);
         </script>
     </body>
 </html>
