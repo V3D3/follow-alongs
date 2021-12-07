@@ -1,3 +1,4 @@
 _blob/*
 _src/*
 p5-example
+*/node_modules

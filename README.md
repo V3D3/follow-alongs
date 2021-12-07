@@ -15,6 +15,7 @@ Sources needed: (in the `_src/` folder)<br>
 `p5.js` for `lots-of-lines-to-mouse`<br>
 `p5.js` for `mouse-magnetized`<br>
 `p5.js` for `3d-knots`<br>
+`p5.js` for `snake-game`<br>
 `chart.js` for `js-fetch-csv`<br>
 `leaflet/leaflet.js` for `iss-location`<br>
 `leaflet/leaflet.css` for `iss-location`
@@ -22,4 +23,8 @@ Sources needed: (in the `_src/` folder)<br>
 Larger files needed: (in the `_blob/` folder)<br>
 `example.txt` for `get-text-file`<br>
 `example.jpg` for `js-fetch`<br>
-`ZonAnn.Ts+dSST.csv` for `js-fetch-csv`<br>
+`ZonAnn.Ts+dSST.csv` for `js-fetch-csv`
+
+Other dependencies:<br>
+`node` for `node-express-demo`<br>
+`express (npm)` for `node-express-demo`
